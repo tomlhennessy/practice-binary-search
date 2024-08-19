@@ -22,4 +22,24 @@ function binarySearch(arr, target) {
 }
 
 
+let arr = [];
+for (let i = 0; i < 1000000; i++) {
+  arr.push(i);
+}
+
+let target = 999999;
+
+// timing linear search
+let start = performance.now();
+linearSearch(arr, target);
+let end = performance.now();
+console.log("Linear Search Time: ", end - start, "ms");
+
+
+// timing binary search
+start = performance.now();
+binarySearch(arr, target);
+end = performance.now();
+console.log("Binary Search Time: ", end - start, "ms");
+
 module.exports = [linearSearch, binarySearch]
